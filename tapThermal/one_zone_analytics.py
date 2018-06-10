@@ -17,21 +17,14 @@ def one_zone_analytics(dimensional=True, adsorption=False, n_iter=10, **kwargs):
     """Analytical models of dimensional and dimensionless TAP standard
     diffusion, and diffusion with reversible adsorption.
 
-    Args:
-        time (array of floats): Time points (s)
-        D (float): Diffusion coefficient (m^2/s)
-        L (float): Reactor length (m)
-        eps (float): Fractional voidage of the packed bed in the reactor
-        Np (float): Number of moles or molecules in the inlet pulse (mol)
-        ka (float): Adsorption rate constant(m^3/mol-s)
-        kd (float): Desorption rate constant (1/s)
-        a_s (float): Surface concentration of active sites (mol/m^2)
-        Sv (float): Surf area of catalyst / volume catalyst (1/m)
-
     Kwargs:
-        diffusion_only (bool): Call to standard diffusion model
-        dimensionless (bool): Call to dimensionless model
-        x (float of array of floats): Spatial coordinate(s) (m)
+        time ():
+        space ():
+        length (): (optional)
+        axial_loc (): (optional)
+        num_molecules ():
+        eps ():
+        coeff ():
 
     Returns:
         ndarray: Gas flux (mol/s) as reactor exit.

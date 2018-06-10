@@ -37,7 +37,7 @@ def thermal_gradient(spatial_grid, temperatures):
     conditions = []
     for num, _ in enumerate(section_grid[:-1]):
         conditions.append(
-            (grid >= section_grid[num]) & (grid <= section_grid[num + 1])
+            (grid >= section_grid[num]) & (grid < section_grid[num + 1])
         )
 
     return np.piecewise(grid, conditions, temperatures)
