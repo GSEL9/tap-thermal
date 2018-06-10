@@ -12,5 +12,6 @@ under the conditions of a temperature gradient was developed. Non-linear least
 squares regression was applied to the numerical model to estimate the transport
 parameters.
 
-Information on TAP from [the research group in catalysis] (http://www.mn.uio.no/kjemi/english/research/groups/catalysis/facilities/tap.html),
+Information on TAP from
+[the research group in catalysis](http://www.mn.uio.no/kjemi/english/research/groups/catalysis/facilities/tap.html),
 and on [Wiki](https://en.wikipedia.org/wiki/Temporal_analysis_of_products).
