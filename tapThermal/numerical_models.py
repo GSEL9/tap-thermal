@@ -35,7 +35,7 @@ def boundary_cond(time, num_molecules=1.e-9, tau=1.e-3):
     """Boundary condition of diffusion model"""
 
     # NOTE: Aviod overflow
-    exp = np.clip(np.exp(time / tau), 1.e-15, 1.e15)
+    exp = np.clip(np.exp(time / tau), 1.e-12, 1.e12)
 
     return (num_molecules * time / (tau ** 2)) / exp
 
