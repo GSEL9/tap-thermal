@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# This module is part of tapThermal.
-
-# The module contains the analytical model of the transient diffusion process
-# across a one-zone reactor exclusive the temperature gradient.
+"""Analytical models for one zone TAP diffusion simulation."""
 
 __author__ = 'Severin E. R. Langberg'
 __email__ = 'Langberg91@gmail.no'

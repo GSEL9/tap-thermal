@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# This module is part of tapThermal.
-
-# The module contains a function producing the representation of a temperature
-# gradient along the microreactor.
+"""Representation of the TAP reactor temperature gradient."""
 
 __author__ = 'Severin E. R. Langberg'
 __email__ = 'Langberg91@gmail.no'
