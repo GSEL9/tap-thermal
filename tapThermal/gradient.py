@@ -9,6 +9,8 @@ __status__ = 'Operational'
 
 import numpy as np
 
+from numba import jit
+
 
 def _check_iterable(value, label):
     """Raises TypeError if value is not iterable."""
@@ -18,6 +20,7 @@ def _check_iterable(value, label):
                         '{}'.format(label, type(value)))
 
 
+@jit
 def thermal_gradient(spatial_grid, temperatures):
     """Distributes give temperature measurements along the reactor as local
     piecewise constant functions representing the temperature gradient."""

@@ -9,9 +9,11 @@ __status__ = 'Operational'
 
 import numpy as np
 
+from numba import jit
 from scipy.integrate import odeint
 
 
+@jit
 def knudsen_diffusion_coeff(temp, ref_coeff, mass=40.0, **kwargs):
     """Knudsen diffusion coefficient"""
 
@@ -28,15 +30,17 @@ def knudsen_diffusion_coeff(temp, ref_coeff, mass=40.0, **kwargs):
     return ref_coeff * np.sqrt(temp * ref_mass / (ref_temp * mass))
 
 
+@jit
 def boundary_cond(time, num_molecules=1.e-9, tau=1.e-3):
     """Boundary condition of diffusion model"""
 
     # NOTE: Aviod overflow
-    exp = np.clip(np.exp(time / tau), 1.e-12, 1.e12)
+    exp = np.exp(np.clip(time / tau, 1.e-12, 1.e12))
 
     return (num_molecules * time / (tau ** 2)) / exp
 
 
+@jit
 def _one_zone_fd(y, time, *args, eps=0.4):
     """Converts the one-zone diffusion PDE model to ODE by finite difference
     scheme."""
@@ -76,6 +80,7 @@ def _one_zone_fd(y, time, *args, eps=0.4):
     return dydt
 
 
+@jit
 def _three_zone_fd(y, time, *args, eps=0.4):
     """Converts the three-zone diffusion PDE model to ODE by finite differences.
     """
@@ -192,6 +197,7 @@ def _three_zone_fd(y, time, *args, eps=0.4):
     return dydt
 
 
+@jit
 def one_zone_numerical(params, ref_coeff, num_molecules=1e-9):
     """Returns one zone reactor exit flow."""
 
@@ -210,6 +216,7 @@ def one_zone_numerical(params, ref_coeff, num_molecules=1e-9):
     return solu[:, -2] * ref_coeff * area / (step_size * num_molecules)
 
 
+@jit
 def three_zone_numerical(params, ref_coeffs, num_molecules=1.e-9):
     """Returns three zone reactor exit flow."""
 
