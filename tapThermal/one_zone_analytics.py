@@ -9,10 +9,7 @@ __status__ = 'Operational'
 
 import numpy as np
 
-from numba import jit
 
-
-@jit
 def one_zone_analytics(dimensional=True, adsorption=False, n_iter=10, **kwargs):
     """Analytical models of dimensional and dimensionless TAP standard
     diffusion, and diffusion with reversible adsorption.
@@ -115,7 +112,6 @@ def one_zone_analytics(dimensional=True, adsorption=False, n_iter=10, **kwargs):
     return model
 
 
-@jit
 def _dimensional_standard_diffusion(solu, time, space, *args, n_iter=10):
     # The dimensional standard diffusion analytical model.
 
@@ -136,7 +132,6 @@ def _dimensional_standard_diffusion(solu, time, space, *args, n_iter=10):
     return np.array(solu * sigma, dtype=float)
 
 
-@jit
 def _dimensionless_standard_diffusion(solu, tau, space, *args, n_iter=10):
     # The dimensional standard diffusion analytical model.
 
@@ -154,7 +149,6 @@ def _dimensionless_standard_diffusion(solu, tau, space, *args, n_iter=10):
     return np.array(solu * np.pi)
 
 
-@jit
 def _dimensional_reversible_adsorption(solu, time, space, *args, n_iter=10):
     # The dimensional standard diffusion with reversible adsorption analytical
     # model.
@@ -193,7 +187,6 @@ def _dimensional_reversible_adsorption(solu, time, space, *args, n_iter=10):
     return np.array(solu * np.pi * sigma, dtype=float)
 
 
-@jit
 def _dimensionless_reversible_adsorption(solu, time, space, *args, n_iter=10):
     # The dimensional standard diffusion with reversible adsorption analytical
     # model.
