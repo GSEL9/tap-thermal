@@ -1,4 +1,4 @@
-# tap-thermal
+# Tap Thermal
 
 This repository contains the code I developed during a research project conducted in 2016. The project was hosted by the research group of chemical
 catalysis at the University of Oslo under the supervision of Dr. Evgeniy A. Redekop, and funded by the Centre for Materials Science and Nanotechnology.
